@@ -14,6 +14,13 @@ app = Flask(__name__)
 SECRET = hmac.new(config.SECRET, digestmod=hashlib.sha1) if config.SECRET else None
 
 @app.route('/', methods=['POST'])
+def index():
+    try:
+        return root()
+    except:
+        import traceback
+        traceback.print_exc()
+        raise
 def root():
     if request.json is None:
        print 'Invalid Content-Type'
