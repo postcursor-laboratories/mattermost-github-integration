@@ -50,8 +50,8 @@ def root():
             msg = Issue(data).opened()
         elif data['action'] == "closed":
             msg = Issue(data).closed()
-        elif data['action'] == "labeled":
-            msg = Issue(data).labeled()
+        #elif data['action'] == "labeled":
+        #    msg = Issue(data).labeled()
         elif data['action'] == "assigned":
             msg = Issue(data).assigned()
     elif event == "issue_comment":
